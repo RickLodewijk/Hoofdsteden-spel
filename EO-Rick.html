@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoofdsteden spel</title>
+</head>
+<body>
+    <script>
+        const Landen = ["Italy", "Luxembourg", "Belgium", 
+        "Denmark", "Finland", "France", "Slovakia", "Slovenia", 
+        "Germany", "Greece", "Ireland", "Netherlands","Portugal", "Spain", 
+        "Sweden", "United Kingdom", "Cyprus","Lithuania", "Czech Republic", 
+        "Estonia", "Hungary", "Austria", "Poland"];
+        const Steden = ["Rome", "Luxembourg", "Brussels", "Copenhagen", "Helsinki", 
+        "Paris", "Bratislava","Ljubljana", "Berlin", "Athens", "Dublin", "Amsterdam", 
+        "Lisbon", "Madrid", "Stockholm", "London", "Nicosia", "Vilnius", "Prague", "Tallin", "Budapest", "Vienna", "Warsaw"];
+        const JuisteAntwoorden = ["Rome", "Luxembourg", "Brussels", "Copenhagen", "Helsinki", 
+        "Paris", "Bratislava","Ljubljana", "Berlin", "Athens", "Dublin", "Amsterdam", 
+        "Lisbon", "Madrid", "Stockholm", "London", "Nicosia", "Vilnius", "Prague", "Tallin", "Budapest", "Vienna", "Warsaw"]; // Juiste antwoorden per land
+
+        let userInput = prompt("Hoe vaak wil je spelen");
+        let rondes = parseInt(userInput); 
+        let score = 0;
+        let i = 0; 
+
+        while(i < rondes){ 
+            let randomIndex = Math.floor(Math.random() * Landen.length);
+            let land = Landen[randomIndex];
+            let juisteStad = JuisteAntwoorden[randomIndex];
+            let antwoord = prompt("Wat is de hoofdstad van " + land + "?\n\n kies:" + Steden.join("\n"));
+            i++; 
+            if (antwoord === juisteStad) {
+                alert("Dat was goed!!!! ;");
+                score = score + 1;
+            } else {
+                alert("Dat klopt niet");
+            }
+        }
+        alert("Score: " + score);
+    </script>
+</body>
+</html>
